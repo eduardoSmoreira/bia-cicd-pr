@@ -10,6 +10,9 @@ phases:
     commands:
       - npm install --loglevel=error
       - REACT_APP_API_URL=http://bia-alb-1629013280.us-east-1.elb.amazonaws.com SKIP_PREFLIGHT_CHECK=true npm run build --prefix client
+      - echo Instalando Sequelize
+      - npm install sequelize-cli -g
+      - npx sequelize db:create
       - echo Criando estrutura relacionado do banco de dados
       - npx sequelize db:create
       - echo Executando migrações
